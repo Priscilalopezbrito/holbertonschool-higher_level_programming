@@ -1,29 +1,14 @@
+>>> add_integer = __import__('0-add_integer').add_integer
 >>> add_integer(1, 2)
 3
 >>> add_integer(100, -2)
 98
 >>> add_integer(100.3, -2)
-98.3
+98
 >>> add_integer(4, "School")
 Traceback (most recent call last):
-  ...
-TypeError: unsupported operand type(s) for +: 'int' and 'str'
->>> add_integer(4, "S")
-Traceback (most recent call last):
-  ...
-TypeError: unsupported operand type(s) for +: 'int' and 'str'
->>> add_integer(4, 'l')
-Traceback (most recent call last):
-  ...
-TypeError: unsupported operand type(s) for +: 'int' and 'str'
->>> add_integer(4, y)
-Traceback (most recent call last):
-  ...
-NameError: name 'y' is not defined
->>> add_integer(u, y)
-Traceback (most recent call last):
-  ...
-NameError: name 'u' is not defined
+    ...
+TypeError: b must be an integer
 >>> add_integer(2, 0)
 2
 >>> add_integer(0, 0)
@@ -32,13 +17,7 @@ NameError: name 'u' is not defined
 0
 >>> add_integer(-1, -1)
 -2
->>> add_integer(', 1)
-  File "<stdin>", line 1
-    add_integer(', 1)
-                ^
-SyntaxError: unterminated string literal (detected at line 1)
->>> add_integer(=, 1)
-  File "<stdin>", line 1
-    add_integer(=, 1)
-                ^
-SyntaxError: invalid syntax
+>>> add_integer('t', 1)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
