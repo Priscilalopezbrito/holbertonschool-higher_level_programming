@@ -5,6 +5,8 @@ def roman_to_int(roman_string):
     prev = 0
     for i in roman_string:
         current = roman[i]
+        if isinstance(roman_string, int):
+            return None
         if prev < current:
             integer += current - 2 * prev
         else:
