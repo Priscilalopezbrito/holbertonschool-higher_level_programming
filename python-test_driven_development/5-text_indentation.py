@@ -14,3 +14,18 @@ def text_indentation(text):
     Raises:
         TypeError: text must be a string
     """
+    if not isinstance(text, str):
+        raise TypeError("text must be a string")
+
+    new = ""
+    i = 0
+    while i < len(text):
+        new += text[i]
+        if text[i] in ['.', '?', ':']:
+            new += "\n\n"
+            i += 1
+            while i < len(text) and text[i] == " ":
+                i += 1
+            continue
+        i += 1
+    print(new, end="")
