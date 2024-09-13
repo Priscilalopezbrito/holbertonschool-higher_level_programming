@@ -16,4 +16,3 @@ def matrix_divided(matrix, div):
         TypeError: non-numbers, div not number, rows aren't same size.
         ZeroDivisionError: If div is 0.
     """
-    return [[round(elem / div, 2) for elem in row] for row in matrix]
