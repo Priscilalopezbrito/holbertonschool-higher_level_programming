@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module defines an empty Square class.
+This module defines Size validation.
 """
 
 
@@ -10,7 +10,7 @@ class Square:
     """
     def __init__(self, size=0):
         """
-        Initialize a Square instance.
+        Defines square size validation.
 
         Args:
             size (int): The size of the square.
