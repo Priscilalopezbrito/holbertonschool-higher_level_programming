@@ -16,8 +16,8 @@ class Square:
             size (int): The size of the square.
             position (tuple): Tuple with 2 positive int
         """
-        self.size = size
-        self.posotion = position
+        self.__size = size
+        self.__position = position
 
     @property
     def size(self):
@@ -70,7 +70,7 @@ class Square:
         """
         Retrieves (getter)
         """
-        return self.__posotion
+        return self.__position
 
     @position.setter
     def position(self, value):
