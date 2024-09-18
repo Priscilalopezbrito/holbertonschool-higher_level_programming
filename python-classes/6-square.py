@@ -14,14 +14,15 @@ class Square:
 
         Args:
             size (int): The size of the square.
+            position (tuple): Tuple with 2 positive int
         """
-        self.__size = size
-        self.__posotion = position
+        self.size = size
+        self.posotion = position
 
     @property
     def size(self):
         """
-        Retrieves (getter)
+        Retrieves size (getter)
         """
         return self.__size
 
