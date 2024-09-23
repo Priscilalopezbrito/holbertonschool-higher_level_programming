@@ -8,6 +8,7 @@ Improve Geometry
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 """superclass import """
 
+
 class Rectangle(BaseGeometry):
     """
     Class Rectangle inherits from BaseGeometry
