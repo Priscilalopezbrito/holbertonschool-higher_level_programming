@@ -34,8 +34,9 @@ class CustomObject:
         try:
             with open(filename, 'wb') as f:
                 pickle.dump(self, f)
-        except OSError:
-            pass
+
+        except (pickle.PicklingError, IOError):
+            return None
 
     @classmethod
     def deserialize(cls, filename):
