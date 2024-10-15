@@ -4,7 +4,8 @@ import csv
 
 
 def fetch_and_print_posts():
-    response = requests.get("https://jsonplaceholder.typicode.com/posts")
+    url = "https://jsonplaceholder.typicode.com/posts"
+    response = requests.get(url)
     #  Print the status code of the response
     print("Status Code: {}".format(response.status_code))
 
@@ -20,13 +21,14 @@ def fetch_and_print_posts():
 
 
 def fetch_and_save_posts():
-    response = requests.get("https://jsonplaceholder.typicode.com/posts")
-
+    url = "https://jsonplaceholder.typicode.com/posts"
+    response = requests.get(url)
     if response.status_code == 200:
         posts = response.json()
+        struct_data = [{"id": post["id"], "title": post["title"], "body": post["body"]} for post in posts]
         with open("posts.csv", "w", newline="", encoding="utf-8") as csvfile:
-            writer = csv.DictWriter(csvfile, fieldnames=["userId", "id", "title", "body"])
+            writer = csv.DictWriter(csvfile, fieldnames=["id", "title", "body"], extrasaction='ignore')
             writer.writeheader()
-            writer.writerows(posts)
+            writer.writerows(struct_data)
     else:
         print("Failed to fetch posts")
