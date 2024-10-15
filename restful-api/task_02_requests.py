@@ -11,10 +11,9 @@ def fetch_and_print_posts():
     #  If successful, parse the fetched data into a JSON object
     if response.status_code == 200:
         posts = response.json()
-        if posts:
-            #  Iterate through JSON data and print the titles of all posts
-            for post in posts:
-                print(post["title"])
+        #  Iterate through JSON data and print the titles of all posts
+        for post in posts:
+            print(post["title"])
 
     else:
         print("Failed to fetch posts")
@@ -23,7 +22,7 @@ def fetch_and_print_posts():
 def fetch_and_save_posts():
     response = requests.get("https://jsonplaceholder.typicode.com/posts")
 
-    if response.status_code == 200 and response.json():
+    if response.status_code == 200:
         posts = response.json()
         with open("posts.csv", "w", newline="", encoding="utf-8") as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=["userId", "id", "title", "body"])
