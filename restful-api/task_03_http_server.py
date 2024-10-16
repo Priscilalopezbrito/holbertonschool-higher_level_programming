@@ -43,7 +43,7 @@ class MyHandler(BaseHTTPRequestHandler):
             self.send_header('Content-type', 'application/json')
             self.end_headers()
             error_m = {
-                "error": "404 Not Found",
+                "error": "Not Found",
                 "message": "Endpoint not found"
             }
             self.wfile.write(bytes(json.dumps(error_m), "utf-8"))
