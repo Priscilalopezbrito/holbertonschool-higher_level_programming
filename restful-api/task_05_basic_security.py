@@ -56,7 +56,6 @@ def login():
     return jsonify({"error": "Invalid credentials"}), 401
 
 
-
 @app.route('/jwt-protected', methods=['GET'])
 @jwt_required()
 def jwt_protected():
