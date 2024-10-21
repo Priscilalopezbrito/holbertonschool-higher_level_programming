@@ -1,5 +1,5 @@
 -- Count 89
 -- Display the number of records
-SELECT COUNT(id)
+SELECT id, COUNT(*) AS count
 FROM first_table
 GROUP BY id;
