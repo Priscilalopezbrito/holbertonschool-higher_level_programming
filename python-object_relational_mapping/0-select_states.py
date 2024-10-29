@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-0. Get all states
+Get all states
 MySQL database connection using Python
 """
 import MySQLdb
