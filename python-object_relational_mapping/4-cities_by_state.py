@@ -22,7 +22,12 @@ if __name__ == '__main__':
 
     cursor = db.cursor()
     cursor.execute(
-        "SELECT * FROM cities ORDER BY id ASC"
+        """
+        SELECT cities.id, cities.name, states.name"
+        FROM cities 
+        Join states on cities.id = states.id
+        ORDER BY cities.id ASC;
+        """
     )
     rows = cursor.fetchall()
     for row in rows:
