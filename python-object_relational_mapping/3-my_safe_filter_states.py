@@ -18,12 +18,12 @@ if __name__ == '__main__':
     state_search = sys.argv[4]
 
     cursor = db.cursor()
-    cursor.execute(
-        "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-        .format(state_search))
+    query = """SELECT * FROM states WHERE name = %s ORDER BY id ASC"""
+    cursor.execute(query, (state_search,))
+
     rows = cursor.fetchall()
     for row in rows:
         print(row)
 
-        cursor.close()
-        db.close()
+    cursor.close()
+    db.close()
