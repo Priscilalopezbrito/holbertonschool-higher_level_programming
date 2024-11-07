@@ -28,7 +28,9 @@ def generate_invitations(template, attendees):
 
         for key in ['name', 'event_title', 'event_date', 'event_location']:
             value = attendee.get(key, 'N/A')
-            invitation = invitation.replace(f'{{{key}}}', value if value else 'N/A')
+            invitation = (
+                invitation.replace(f'{{{key}}}', value if value else 'N/A')
+            )
 
         # Generate Output Files:
         output_filename = f'output_{index}.txt'
